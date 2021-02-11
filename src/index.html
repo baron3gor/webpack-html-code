@@ -1,28 +1,32 @@
-<% var data = {
-		title: "Заголовок | Проект",
-	}; %><%= _.template(require('@html/includes/head.html'))(data) %>
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <% var data = { title: "Project | Title", }; %>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+      <!-- Meta + Title -->
+      <%= _.template(require('@html/includes/meta.html'))(data) %>
+   </head>
+   <body>
+      <div class="pxr-s-w">
+         <div class="pxr-s-c">
+            <!-- Hidden/Mobile Sidebar -->
+            <%= _.template(require('@html/includes/hidden-sidebar.html'))(data) %>
 
-	<!-- Start main Container -->
-	<%= _.template(require('@html/includes/start.html'))(data) %>
+            <header>
+               <!-- Header Navigation -->
+               <%= _.template(require('@html/includes/header-nav.html'))(data) %>
 
-	<!-- Hidden/Mobile Sidebar -->
-	<%= _.template(require('@html/includes/hidden-sidebar.html'))(data) %>
+               <!-- Sticky Navigation -->
+               <%= _.template(require('@html/includes/sticky-nav.html'))(data) %>
+            </header>
 
-  <header>
-  		<!-- Header Navigation -->
-		<%= _.template(require('@html/includes/header-nav.html'))(data) %>
+            <h1>index.html</h1>
 
-		<!-- Sticky Navigation -->
-		<%= _.template(require('@html/includes/sticky-nav.html'))(data) %>
-  </header>
-
-	<h1>index.html</h1>
-
-  <!-- Footer -->
-  <%= _.template(require('@html/includes/footer.html'))(data) %>
-
-	<!-- End main Container -->
-	<%= _.template(require('@html/includes/end.html'))(data) %>
-
-<!-- /body /html -->
-<%= _.template(require('@html/includes/@html.html'))(data) %>
+            <!-- Footer -->
+            <%= _.template(require('@html/includes/footer.html'))(data) %>
+         </div>
+      </div>
+   </body>
+</html>
