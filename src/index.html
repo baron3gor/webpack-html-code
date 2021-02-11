@@ -1,0 +1,28 @@
+<% var data = {
+		title: "Заголовок | Проект",
+	}; %><%= _.template(require('@html/includes/head.html'))(data) %>
+
+	<!-- Start main Container -->
+	<%= _.template(require('@html/includes/start.html'))(data) %>
+
+	<!-- Hidden/Mobile Sidebar -->
+	<%= _.template(require('@html/includes/hidden-sidebar.html'))(data) %>
+
+  <header>
+  		<!-- Header Navigation -->
+		<%= _.template(require('@html/includes/header-nav.html'))(data) %>
+
+		<!-- Sticky Navigation -->
+		<%= _.template(require('@html/includes/sticky-nav.html'))(data) %>
+  </header>
+
+	<h1>index.html</h1>
+
+  <!-- Footer -->
+  <%= _.template(require('@html/includes/footer.html'))(data) %>
+
+	<!-- End main Container -->
+	<%= _.template(require('@html/includes/end.html'))(data) %>
+
+<!-- /body /html -->
+<%= _.template(require('@html/includes/@html.html'))(data) %>

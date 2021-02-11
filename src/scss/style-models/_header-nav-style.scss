@@ -1,0 +1,37 @@
+.pxr-header-top-line {
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	&__nav {
+		ul {
+			display: flex;
+			padding: 0;
+			margin: 0;
+			li{
+				margin: 0 10px;
+				list-style-type: none;
+				a {
+					padding: 5px;
+					display: inline-block;
+					@include transition(all 200ms ease-in-out);
+					&:hover {
+						color: blue;
+						@include transition(all 200ms ease-in-out);
+					}
+				}
+			}
+		}
+	}
+	&__btn {
+		display: flex;
+		cursor: pointer;
+	}
+	&__logo {
+		a {
+			display: inline-block;
+			padding: 5px;
+		}
+	}
+}

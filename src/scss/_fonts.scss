@@ -1,0 +1,9 @@
+/*
+ * 	font-face(font-family, map, filename, weight)
+ */
+
+@include font-face("notosans", "notosans", "notosans", 400);
+
+// pxr Icon Font + scss file
+@include font-icon("pxriconfont", "pxriconfont", "pxriconfont");
+@import "./iconfonts/pxriconfont";
