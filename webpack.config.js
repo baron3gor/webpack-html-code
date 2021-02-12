@@ -159,7 +159,7 @@ module.exports = {
    context: path.resolve(__dirname, 'src'),
    mode: 'development',
    entry: {
-      // swiper: ['@/js/libs/swiper.lib.js'], // enqueue custom script
+      // swiper: ['@/js/libs/swiper.lib.js'], // enqueue custom scripts
       main: [
          '@babel/polyfill',
          '@/js/libs/velocity.lib.js',
