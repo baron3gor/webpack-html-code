@@ -14,12 +14,15 @@ const isProd = !isDev
 const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
 
 function generateHtmlPlugins() {
-   let htmlPageNames = fs.readdirSync('src/html/pages');
+   let htmlPageNames = fs.readdirSync('src/html/pages').filter(function (x) {
+      return x !== '.gitkeep';
+   });
    return multipleHtmlPlugins = htmlPageNames.map(item => {
       const parts = item.split('.');
       const name = parts[0];
+      const ext = parts[1];
       return new HTMLWebpackPlgin({
-         template: `./html/pages/${name}.html`,
+         template: `./html/pages/${name}.${ext}`,
          filename: `${name}.html`,
          cache: false,
          minify: isDev ? {
@@ -129,12 +132,21 @@ const plugins = () => {
          patterns: [
             {
                from: path.resolve(__dirname, 'src/assets'),
-               to: path.resolve(__dirname, 'dist')
+               to: path.resolve(__dirname, 'dist'),
+               noErrorOnMissing: true
             },
-            // {
-            // 	from: path.resolve(__dirname, 'src/img/static'),
-            // 	to: path.resolve(__dirname, 'dist/img')
-            // },
+            {
+               from: path.resolve(__dirname, 'src/img/static'),
+               to: path.resolve(__dirname, 'dist/img'),
+               noErrorOnMissing: true,
+               globOptions: {
+                  dot: true,
+                  gitignore: true,
+                  ignore: [
+                     '**/*.gitkeep',
+                  ]
+               }
+            },
          ]
       }),
       new MiniCssExtractPlugin({
