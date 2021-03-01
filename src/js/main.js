@@ -8,7 +8,3 @@ import '@models/viewport-animation'
 
 // Main JS
 import '@/js/scripts'
-
-
-
-
