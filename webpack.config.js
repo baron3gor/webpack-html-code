@@ -33,9 +33,9 @@ function generateHtmlPlugins() {
             removeComments: true,
             useShortDoctype: false
          } : {
-               removeComments: true,
-               collapseWhitespace: false,
-            }
+            removeComments: true,
+            collapseWhitespace: false,
+         }
       })
    });
 }
@@ -123,9 +123,9 @@ const plugins = () => {
             removeComments: true,
             useShortDoctype: false
          } : {
-               removeComments: true,
-               collapseWhitespace: true,
-            }
+            removeComments: true,
+            collapseWhitespace: true,
+         }
       }),
       new CleanWebpackPlugin(),
       new CopyWebpackPlugin({
@@ -136,7 +136,7 @@ const plugins = () => {
                noErrorOnMissing: true
             },
             {
-               from: path.resolve(__dirname, 'src/img/static'),
+               from: path.resolve(__dirname, 'src/img/prod'),
                to: path.resolve(__dirname, 'dist/img'),
                noErrorOnMissing: true,
                globOptions: {
@@ -174,7 +174,7 @@ module.exports = {
       // swiper: ['@/js/libs/swiper.lib.js'], // enqueue custom scripts
       main: [
          '@babel/polyfill',
-         '@/js/libs/velocity.lib.js',
+         // '@/js/libs/velocity.lib.js',
          '@/js/main.js'
       ],
    },
