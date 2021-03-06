@@ -1,11 +1,11 @@
-let $window = $(window)
+const $window = $(window)
 
 /********************************************************************************
 * IMG ANIMATION
 ********************************************************************************/
-let animateImages = function () {
+const animateImages = function () {
    $('.fade-image:not(.loaded-img-wrapper):not(.progress-animation)').each(function () {
-      let el = this;
+      const el = this;
       if ($(el).offset().top < $window.scrollTop() + ($window.height() / 10) * 8) {
          $(el).addClass('loaded-img-wrapper');
       }
@@ -23,9 +23,9 @@ function bindImageAnimations() {
 /********************************************************************************
 * TEXT ANIMATION
 ********************************************************************************/
-let animateText = function () {
+const animateText = function () {
    $('.fade-animation:not(.loaded-animation):not(.progress-animation)').each(function () {
-      let el = this;
+      const el = this;
       if ($(el).offset().top < $window.scrollTop() + ($window.height() / 10) * 8) {
          $(el).addClass('loaded-animation');
       }
@@ -55,7 +55,7 @@ function arrayShuffle(a) {
 
 function animateMosaic() {
    if ($('.mosaic-item').length > 0) {
-      let items = [];
+      const items = [];
       $('.mosaic-item').each(function () {
          items.push($(this));
       });

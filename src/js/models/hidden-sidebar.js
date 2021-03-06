@@ -12,7 +12,7 @@ if ($('.pxr-header-top-line__btn, .pxr-sticky-top-line__btn').length) {
 }
 
 $(document).mouseup(function (e) {
-   let sidemenu = $('.pxr-side-mobile');
+   const sidemenu = $('.pxr-side-mobile');
    if (!sidemenu.is(e.target) && sidemenu.has(e.target).length === 0) {
 
       sidemenu.removeClass('pxr-side-menu-open');
